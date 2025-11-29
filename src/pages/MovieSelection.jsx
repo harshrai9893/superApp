@@ -23,7 +23,14 @@ export default function Selection() {
   const navigate = useNavigate();
 
   const moveNext=()=>{
-    console.log("do nothing");
+    if(selectedMovies.length<3){
+      alert("please atleast 3 movies");
+      return;
+    }else{
+      localStorage.setItem("selectedMovies",JSON.stringify(selectedMovies));
+      setSelectedMovies([]);
+      navigate("/info")
+    }
   }
 
   return (

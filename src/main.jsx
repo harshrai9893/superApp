@@ -9,6 +9,7 @@ import {Browse} from "./pages/Browse.jsx"
 import Selection from "./pages/MovieSelection.jsx"
 import {NotFound} from './pages/NotFound.jsx';
 import { Link } from 'react-router-dom';
+import CarouselPage from './pages/carouselPage.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/carousel' element={<CarouselPage/>}/>
       <Route path='/info' element={<Info/>}/>
       <Route path='/browse' element={<Browse/>}/>
       <Route path='/selection' element={<Selection/>}/>
