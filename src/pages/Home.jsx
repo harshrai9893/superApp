@@ -126,7 +126,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Home = () => {
+ const Home = () => {
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -274,3 +274,5 @@ export const Home = () => {
     </div>
   );
 }
+
+export default Home;

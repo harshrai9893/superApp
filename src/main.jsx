@@ -3,12 +3,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-import {Home} from "./pages/Home.jsx"
-import {Info} from "./pages/Info.jsx"
-import {Browse} from "./pages/Browse.jsx"
+import Home from "./pages/Home.jsx"
+import Info from "./pages/Info.jsx"
+import Browse from "./pages/Browse.jsx"
 import Selection from "./pages/MovieSelection.jsx"
-import {NotFound} from './pages/NotFound.jsx';
-import { Link } from 'react-router-dom';
+import NotFound from './pages/NotFound.jsx';
 import CarouselPage from './pages/carouselPage.jsx';
 
 createRoot(document.getElementById('root')).render(
