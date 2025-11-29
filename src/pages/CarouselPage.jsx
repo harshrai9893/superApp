@@ -20,4 +20,4 @@ const CarouselPage = () => {
   )
 }
 
-export default CarouselPage
+export default CarouselPage;
