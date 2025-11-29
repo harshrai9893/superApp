@@ -11,7 +11,6 @@ import {NotFound} from './pages/NotFound.jsx';
 import { Link } from 'react-router-dom';
 import CarouselPage from './pages/carouselPage.jsx';
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
