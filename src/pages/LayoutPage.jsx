@@ -4,7 +4,7 @@ import NewsWidget from '../components/NewsWidget';
 import WeatherWidget from '../components/WeatherWidget';
 import ProfileWidget from '../components/ProfileWidget';
 
-const CarouselPage = () => {
+export const  LayoutPage = () => {
   return (
    <div className={styles.container}> 
     <div className={styles.profileWidget}>
@@ -20,4 +20,3 @@ const CarouselPage = () => {
   )
 }
 
-export default CarouselPage;

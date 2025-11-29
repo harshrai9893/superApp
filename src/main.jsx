@@ -8,14 +8,14 @@ import Info from "./pages/Info.jsx"
 import Browse from "./pages/Browse.jsx"
 import Selection from "./pages/MovieSelection.jsx"
 import NotFound from './pages/NotFound.jsx';
-import CarouselPage from './pages/carouselPage.jsx';
+import {LayoutPage} from './pages/LayoutPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/carousel' element={<CarouselPage/>}/>
+      <Route path='/Layout' element={<LayoutPage/>}/>
       <Route path='/info' element={<Info/>}/>
       <Route path='/browse' element={<Browse/>}/>
       <Route path='/selection' element={<Selection/>}/>
