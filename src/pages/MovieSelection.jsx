@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MovieBox from '../components/movieBox';
+import MovieBox from '../components/MovieBox';
 import MovieChip from '../components/MovieChip';
 
 
