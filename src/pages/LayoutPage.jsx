@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from "./CarouselPage.module.css";
 import NewsWidget from '../components/NewsWidget';
 import WeatherWidget from '../components/WeatherWidget';
 import ProfileWidget from '../components/ProfileWidget';

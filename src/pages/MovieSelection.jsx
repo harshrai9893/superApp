@@ -6,8 +6,7 @@ import MovieChip from '../components/MovieChip';
 
 
 const MOVIES = [
-  { id: 1, movie: "Action" },
-  { id: 2, movie: "Comedy" },
+  { id: 1, movie: "Action",color:"#84C2FF" },
   { id: 3, movie: "Drama" },
   { id: 4, movie: "Sci-Fi" },
   { id: 5, movie: "Horror" },
@@ -34,7 +33,15 @@ export default function Selection() {
   }
 
   return (
-    <div>
+    <div className="min-h-screen bg-black text-white py-12">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Left column */}
+
+        <h2 className="text-green-400 font-handwriting text-3xl mb-6">Super app</h2>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+            Choose your <br /> entertainment <br /> category
+          </h1>
      <div style={{
       display:"grid",
       gridTemplateColumns:"repeat(3,1fr)"
@@ -43,7 +50,6 @@ export default function Selection() {
      {MOVIES.map((category)=>(
       <div key={category.id}>
         <MovieBox
-        category={category}
         selectedMovies={selectedMovies}
         setSelectedMovies={setSelectedMovies}
         // selection logic inside it 
@@ -77,6 +83,7 @@ export default function Selection() {
   }
 </div>
  <button onClick={moveNext}>Next</button>
+ </div>
     </div>
   )
 }

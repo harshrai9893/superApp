@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
 import "react-circular-progressbar/dist/styles.css";
+import {CircularProgressbar} from "react-circular-progressbar";
 import Styles from '../components/TimerWidget.module.css';
 
 const HOURS_STEP = 3600;
@@ -28,8 +29,9 @@ const TimerWidget = () => {
 
     // handle the step count for the timer 
     const stephandler =(step)=>{
-        if(isRunning || (step<0 && timeRemaining -step < 0))return;
-        setTimeRemaining(timeRemaining+ step);
+        if(isRunning) return;
+        if(step<0 && timeRemaining +step < 0)return;
+        setTimeRemaining(timeRemaining +step);
         setcachedSeconds(cachedSeconds + step);
     };
      
@@ -64,7 +66,26 @@ const TimerWidget = () => {
   return (
     <div className={Styles.container}>
         <div className={Styles.left}>
+         {/* code start from here */}
+         <CircularProgressbar
+         value={percentage}
 
+         text = {formatTime(parseTime(timeRemaining))}
+         styles={{
+            path:{
+                stroke:"#FF6A6A",
+                strokeWidth:"3px",
+                transition:"stroke-dashoffset 0.5s ease 0s"
+            },
+            trail:{
+                stroke:"transparent",
+            },
+            text:{
+                fill:"white",
+            fontSize:"12px",
+        },
+         }}
+         />
         </div>
         <div className={Styles.right}>
             <div className={Styles.configure}>
@@ -72,7 +93,7 @@ const TimerWidget = () => {
                     <p>Hours</p>
                     <IoIosArrowUp onClick={()=>stephandler(HOURS_STEP)}/>
                     <p>
-                        {""}
+                        
                         {parseTime(cachedSeconds).hours.toString().padStart(2,"0")}
                         </p>
                         <IoIosArrowDown onClick={()=>stephandler(HOURS_STEP)}/>
@@ -81,7 +102,7 @@ const TimerWidget = () => {
                   <p>Minutes</p>
                   <IoIosArrowUp onClick={()=>stephandler(MINUTES_STEP)}/>
                   <p>
-                    {""}
+                    
                     {parseTime(cachedSeconds).minutes.toString().padStart(2,"0")}
                     </p>
                     <IoIosArrowDown onClick={()=>stephandler(MINUTES_STEP)}/>
@@ -90,7 +111,7 @@ const TimerWidget = () => {
                   <p>Seconds</p>
                   <IoIosArrowUp onClick={()=>stephandler(SECONDS_STEP)}/>
                   <p>
-                    {""}
+                    
                     {parseTime(cachedSeconds).seconds.toString().padStart(2,"0")}
                     </p>
                     <IoIosArrowDown onClick={()=>stephandler(SECONDS_STEP)}/>
@@ -99,7 +120,9 @@ const TimerWidget = () => {
             </div>
 
         </div>
-        <button>{isRunning?"pause":"start"}</button>
+        <button onClick={() => setIsRunning(!isRunning)}>
+            {isRunning?"pause":"start"}
+            </button>
     </div>
   )
 }
